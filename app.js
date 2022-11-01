@@ -28,11 +28,14 @@ app.use((req,res,next) => {
 const userRoutes = require('./api/routes/users');
 const bankdetailRoutes = require('./api/routes/bankdetails');
 const companyRoutes = require('./api/routes/companies');
-
+const fundRoutes = require('./api/routes/fundraisers');
+const donationRoutes = require('./api/routes/donations');
 
 app.use('/user',userRoutes);
 app.use('/bankdet',bankdetailRoutes);
 app.use('/company',companyRoutes);
+app.use('/fundraiser',fundRoutes);
+app.use('/donation',donationRoutes);
 
 app.use((req,res,next) => {
     const error =new Error('Not found');
